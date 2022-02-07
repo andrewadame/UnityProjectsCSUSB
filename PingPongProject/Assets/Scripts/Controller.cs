@@ -29,6 +29,7 @@ public class Controller : MonoBehaviour
             else
                 leftUp = 0;
 
+            // When not pressing key, stop moving
             if (leftUp == 0)
                 rigidbody.velocity = new Vector2(0, rigidbody.velocity.x);
 
