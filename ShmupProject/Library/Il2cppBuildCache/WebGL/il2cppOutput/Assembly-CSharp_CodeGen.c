@@ -1,0 +1,187 @@
+﻿#include "pch-c.h"
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+// 0x00000001 System.Void BmCtrlr::OnEnable()
+extern void BmCtrlr_OnEnable_mF1ACD31E808657D402B654774B9F56C6366CAA66 (void);
+// 0x00000002 System.Void BmCtrlr::Disable()
+extern void BmCtrlr_Disable_m3ACABECF6F7DCA3A52BB908861552CE89431ABFF (void);
+// 0x00000003 System.Void BmCtrlr::.ctor()
+extern void BmCtrlr__ctor_m7FFC2C680C076D23A9AD1A4C7D2FC21D3BC8046C (void);
+// 0x00000004 System.Void EnBltCtrl::Awake()
+extern void EnBltCtrl_Awake_mE43F49C938A27334431A7B1A540BDD14F2BB1EAE (void);
+// 0x00000005 System.Void EnBltCtrl::OnEnable()
+extern void EnBltCtrl_OnEnable_mFC942997F1FCB6708E141C0DFDE3F95BFD09FBBE (void);
+// 0x00000006 System.Void EnBltCtrl::Disable()
+extern void EnBltCtrl_Disable_m86B33CF465230A85390407612B16A567989419D7 (void);
+// 0x00000007 System.Void EnBltCtrl::Update()
+extern void EnBltCtrl_Update_m892F7C6B5270DD72EC0A35DD298B752A2AAECD3F (void);
+// 0x00000008 System.Void EnBltCtrl::OnTriggerEnter2D(UnityEngine.Collider2D)
+extern void EnBltCtrl_OnTriggerEnter2D_m57457222F035B1C64B77CFE414C8DB4CBB0906C4 (void);
+// 0x00000009 System.Void EnBltCtrl::.ctor()
+extern void EnBltCtrl__ctor_mE16FFF90BCE39DD5ED8CAED7FEEE531A46AA2A16 (void);
+// 0x0000000A System.Void EnCtrlr::Start()
+extern void EnCtrlr_Start_m759130059A5143F8F0503F208E152C46FF575063 (void);
+// 0x0000000B System.Void EnCtrlr::Update()
+extern void EnCtrlr_Update_m1B0B30A25E54AA8DC7EBFE226E73EE56E6F77580 (void);
+// 0x0000000C System.Void EnCtrlr::Attck()
+extern void EnCtrlr_Attck_m54C2D87309942373A9F5DFC3BA025E9496789F84 (void);
+// 0x0000000D System.Void EnCtrlr::TkeDmg(System.Int32)
+extern void EnCtrlr_TkeDmg_m8F9D7BBF35DA0F18A4A71D518E32FF42F5B81E1B (void);
+// 0x0000000E System.Void EnCtrlr::Die()
+extern void EnCtrlr_Die_m59585BFFEFD60B01859A2BA6411059F39F981B41 (void);
+// 0x0000000F System.Void EnCtrlr::.ctor()
+extern void EnCtrlr__ctor_mB523A1147EFB57418037B1E4477872EEAA6F4411 (void);
+// 0x00000010 System.Void GmeCtrlr::Start()
+extern void GmeCtrlr_Start_mB992C033751141290C2FAEC9D2D063B0869BBE61 (void);
+// 0x00000011 System.Void GmeCtrlr::Update()
+extern void GmeCtrlr_Update_mCE74F43131C825CBDACDB822E057A24A5D7F80B3 (void);
+// 0x00000012 System.Void GmeCtrlr::SpwnEn()
+extern void GmeCtrlr_SpwnEn_m20F55EA0252889BEF21583F1C5A5D7628870D95E (void);
+// 0x00000013 System.Void GmeCtrlr::AddScre(System.Int32)
+extern void GmeCtrlr_AddScre_m72C6452CBDBFA92A24C71A9BF34DD52077DBD8FE (void);
+// 0x00000014 System.Void GmeCtrlr::Restart()
+extern void GmeCtrlr_Restart_mE3DC16F03F27ADA4860B7039C6BD5685CF6E3715 (void);
+// 0x00000015 System.Void GmeCtrlr::.ctor()
+extern void GmeCtrlr__ctor_m6DC3469EE400619F3D622C876B76AB1C994E3F78 (void);
+// 0x00000016 System.Void PlyrCtrlr::Start()
+extern void PlyrCtrlr_Start_m2884690862DBD536C0DF4B611BDEBCC842952AAB (void);
+// 0x00000017 System.Void PlyrCtrlr::AddHrt()
+extern void PlyrCtrlr_AddHrt_mEEF2556AA464DE711ADBCF742499CEA1905AE93A (void);
+// 0x00000018 System.Void PlyrCtrlr::RmveHrt(System.Int32)
+extern void PlyrCtrlr_RmveHrt_m1CFCC4C5DC576095AB1C8B8E623E05BC1001F96F (void);
+// 0x00000019 System.Void PlyrCtrlr::Update()
+extern void PlyrCtrlr_Update_mC65779835FAE459B76060A784B0CB92F991E050E (void);
+// 0x0000001A System.Void PlyrCtrlr::Shoot()
+extern void PlyrCtrlr_Shoot_m087E6E30DBB81EED4808097AC1D56E86FA3AEE8E (void);
+// 0x0000001B System.Void PlyrCtrlr::TkeDmg(System.Int32)
+extern void PlyrCtrlr_TkeDmg_mDF348BBC461F3E4A82F1244603B27C862D144C60 (void);
+// 0x0000001C System.Void PlyrCtrlr::GmeOvr()
+extern void PlyrCtrlr_GmeOvr_mD6D1E19CA6038FEE0C78D68C25F21189B15739ED (void);
+// 0x0000001D System.Void PlyrCtrlr::OnCollisionEnter2D(UnityEngine.Collision2D)
+extern void PlyrCtrlr_OnCollisionEnter2D_m66356EA6A569A5C69D26BAE5FE9B9B8745C5712E (void);
+// 0x0000001E System.Void PlyrCtrlr::.ctor()
+extern void PlyrCtrlr__ctor_mEACFA516F6B9B52423485BC4A7B53B7692EFB3E0 (void);
+// 0x0000001F System.Void bltCtrlr::Awake()
+extern void bltCtrlr_Awake_m819155FFDA643AC3B30982663CD9330455447F22 (void);
+// 0x00000020 System.Void bltCtrlr::OnEnable()
+extern void bltCtrlr_OnEnable_mB15A3CD7BCEBB8E4B92F04857CE65840AABE6872 (void);
+// 0x00000021 System.Void bltCtrlr::Disable()
+extern void bltCtrlr_Disable_m5C251437F8BAFAC9CFB87C5B9DE878BC967767CB (void);
+// 0x00000022 System.Void bltCtrlr::Update()
+extern void bltCtrlr_Update_m51C28D478EAA605B2049E371C54242A80CFCE27D (void);
+// 0x00000023 System.Void bltCtrlr::OnTriggerEnter2D(UnityEngine.Collider2D)
+extern void bltCtrlr_OnTriggerEnter2D_m6E9E07FFD4F95408B4CC4B8DDE286AF746061224 (void);
+// 0x00000024 System.Void bltCtrlr::.ctor()
+extern void bltCtrlr__ctor_mC21A1DE2AD2F295469A425CE52E0A1F19315E546 (void);
+static Il2CppMethodPointer s_methodPointers[36] = 
+{
+	BmCtrlr_OnEnable_mF1ACD31E808657D402B654774B9F56C6366CAA66,
+	BmCtrlr_Disable_m3ACABECF6F7DCA3A52BB908861552CE89431ABFF,
+	BmCtrlr__ctor_m7FFC2C680C076D23A9AD1A4C7D2FC21D3BC8046C,
+	EnBltCtrl_Awake_mE43F49C938A27334431A7B1A540BDD14F2BB1EAE,
+	EnBltCtrl_OnEnable_mFC942997F1FCB6708E141C0DFDE3F95BFD09FBBE,
+	EnBltCtrl_Disable_m86B33CF465230A85390407612B16A567989419D7,
+	EnBltCtrl_Update_m892F7C6B5270DD72EC0A35DD298B752A2AAECD3F,
+	EnBltCtrl_OnTriggerEnter2D_m57457222F035B1C64B77CFE414C8DB4CBB0906C4,
+	EnBltCtrl__ctor_mE16FFF90BCE39DD5ED8CAED7FEEE531A46AA2A16,
+	EnCtrlr_Start_m759130059A5143F8F0503F208E152C46FF575063,
+	EnCtrlr_Update_m1B0B30A25E54AA8DC7EBFE226E73EE56E6F77580,
+	EnCtrlr_Attck_m54C2D87309942373A9F5DFC3BA025E9496789F84,
+	EnCtrlr_TkeDmg_m8F9D7BBF35DA0F18A4A71D518E32FF42F5B81E1B,
+	EnCtrlr_Die_m59585BFFEFD60B01859A2BA6411059F39F981B41,
+	EnCtrlr__ctor_mB523A1147EFB57418037B1E4477872EEAA6F4411,
+	GmeCtrlr_Start_mB992C033751141290C2FAEC9D2D063B0869BBE61,
+	GmeCtrlr_Update_mCE74F43131C825CBDACDB822E057A24A5D7F80B3,
+	GmeCtrlr_SpwnEn_m20F55EA0252889BEF21583F1C5A5D7628870D95E,
+	GmeCtrlr_AddScre_m72C6452CBDBFA92A24C71A9BF34DD52077DBD8FE,
+	GmeCtrlr_Restart_mE3DC16F03F27ADA4860B7039C6BD5685CF6E3715,
+	GmeCtrlr__ctor_m6DC3469EE400619F3D622C876B76AB1C994E3F78,
+	PlyrCtrlr_Start_m2884690862DBD536C0DF4B611BDEBCC842952AAB,
+	PlyrCtrlr_AddHrt_mEEF2556AA464DE711ADBCF742499CEA1905AE93A,
+	PlyrCtrlr_RmveHrt_m1CFCC4C5DC576095AB1C8B8E623E05BC1001F96F,
+	PlyrCtrlr_Update_mC65779835FAE459B76060A784B0CB92F991E050E,
+	PlyrCtrlr_Shoot_m087E6E30DBB81EED4808097AC1D56E86FA3AEE8E,
+	PlyrCtrlr_TkeDmg_mDF348BBC461F3E4A82F1244603B27C862D144C60,
+	PlyrCtrlr_GmeOvr_mD6D1E19CA6038FEE0C78D68C25F21189B15739ED,
+	PlyrCtrlr_OnCollisionEnter2D_m66356EA6A569A5C69D26BAE5FE9B9B8745C5712E,
+	PlyrCtrlr__ctor_mEACFA516F6B9B52423485BC4A7B53B7692EFB3E0,
+	bltCtrlr_Awake_m819155FFDA643AC3B30982663CD9330455447F22,
+	bltCtrlr_OnEnable_mB15A3CD7BCEBB8E4B92F04857CE65840AABE6872,
+	bltCtrlr_Disable_m5C251437F8BAFAC9CFB87C5B9DE878BC967767CB,
+	bltCtrlr_Update_m51C28D478EAA605B2049E371C54242A80CFCE27D,
+	bltCtrlr_OnTriggerEnter2D_m6E9E07FFD4F95408B4CC4B8DDE286AF746061224,
+	bltCtrlr__ctor_mC21A1DE2AD2F295469A425CE52E0A1F19315E546,
+};
+static const int32_t s_InvokerIndices[36] = 
+{
+	1121,
+	1121,
+	1121,
+	1121,
+	1121,
+	1121,
+	1121,
+	961,
+	1121,
+	1121,
+	1121,
+	1121,
+	951,
+	1121,
+	1121,
+	1121,
+	1121,
+	1121,
+	951,
+	1121,
+	1121,
+	1121,
+	1121,
+	951,
+	1121,
+	1121,
+	951,
+	1121,
+	961,
+	1121,
+	1121,
+	1121,
+	1121,
+	1121,
+	961,
+	1121,
+};
+extern const CustomAttributesCacheGenerator g_AssemblyU2DCSharp_AttributeGenerators[];
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	36,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	g_AssemblyU2DCSharp_AttributeGenerators,
+	NULL, // module initializer,
+	NULL,
+	NULL,
+	NULL,
+};
