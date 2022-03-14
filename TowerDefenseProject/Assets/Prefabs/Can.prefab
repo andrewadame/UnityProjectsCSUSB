@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4753975481936898898}
   - component: {fileID: 8322631820901877331}
   - component: {fileID: 936695626919093224}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,6 +31,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 8840112377081339426}
+  - {fileID: 3897656329459222147}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,12 +98,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fa6788cd02466479dd66285732a410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StSpd: 0.5
+  StSpd: 0.7
   CnRot: 5
   trgt: {fileID: 0}
   atkRng: 1.5
   child: {fileID: 8840112377081339426}
   blt: {fileID: 566879087539253298, guid: f33dc463f54bfb741826588676eea524, type: 3}
+  bltSpwnPos:
+  - {fileID: 2879092466753777954}
 --- !u!58 &936695626919093224
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -119,6 +122,36 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!1 &2879092466753777954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3897656329459222147}
+  m_Layer: 2
+  m_Name: BltSpwnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3897656329459222147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2879092466753777954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.127, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1279195431558032107}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5367709083963360174
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8840112377081339426}
   - component: {fileID: 2258746228991104652}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CanBse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +222,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2b824e843fdfa864caef02d1c72dbaeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

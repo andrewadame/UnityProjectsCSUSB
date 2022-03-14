@@ -55,9 +55,13 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CanCtrlr.cs" />
     <Compile Include="Assets\Scripts\GmeCtrlr.cs" />
-    <Compile Include="Assets\Scripts\TwrSpwnCtrlr.cs" />
     <Compile Include="Assets\Scripts\BltCtrlr.cs" />
+    <Compile Include="Assets\Scripts\BseTwr.cs" />
     <Compile Include="Assets\Scripts\EnCtrlr.cs" />
+    <Compile Include="Assets\Scripts\ShotCtrlr.cs" />
+    <Compile Include="Assets\Scripts\TwrSpwnCtrlr.cs" />
+    <Compile Include="Assets\Scripts\MoCtrlr.cs" />
+    <Compile Include="Assets\Scripts\MoShellCtrlr.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7653301836462472694}
   - component: {fileID: 7653301836462472695}
   - component: {fileID: 5220308403000852518}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnAPC
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -144,3 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d362311cc5b28146a3f44c3141d1acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spd: 500
+  mxHlth: 10
+  hlth: 0
+  crntWypt: 0
+  rotSpd: 5
+  dmg: 1
+  drpMny: 10
