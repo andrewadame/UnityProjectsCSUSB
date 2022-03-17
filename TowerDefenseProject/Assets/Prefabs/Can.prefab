@@ -109,7 +109,6 @@ MonoBehaviour:
   - {fileID: 2879092466753777954}
   cost: 10
   flsh: {fileID: 6045305355899426922, guid: 6942f79b417942a458a72ba9b1b2ebdc, type: 3}
-  srce: {fileID: 0}
 --- !u!58 &936695626919093224
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -322,7 +321,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2b824e843fdfa864caef02d1c72dbaeb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
