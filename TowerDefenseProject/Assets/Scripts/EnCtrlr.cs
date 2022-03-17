@@ -25,6 +25,8 @@ public class EnCtrlr : MonoBehaviour
 
     public float drpMny;
 
+    public GameObject boom;
+
     private void Awake()
     {
         EnRgdBdy = GetComponent<Rigidbody2D>();
@@ -89,6 +91,7 @@ public class EnCtrlr : MonoBehaviour
         if(hlth <= 0)
         {
             cont.GveMny(drpMny);
+            Instantiate(boom, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         //Debug.Log("Enemy Take Damage");

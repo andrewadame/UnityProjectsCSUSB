@@ -148,6 +148,7 @@ MonoBehaviour:
   mxHlth: 10
   hlth: 0
   crntWypt: 0
-  rotSpd: 5
+  rotSpd: 10
   dmg: 1
   drpMny: 10
+  boom: {fileID: 5945206758883683247, guid: 68ae5bda176a27e4984a3ffaf3bfdc84, type: 3}

@@ -58,10 +58,11 @@
     <Compile Include="Assets\Scripts\BltCtrlr.cs" />
     <Compile Include="Assets\Scripts\BseTwr.cs" />
     <Compile Include="Assets\Scripts\EnCtrlr.cs" />
+    <Compile Include="Assets\Scripts\MoShellCtrlr.cs" />
+    <Compile Include="Assets\Scripts\MoCtrlr.cs" />
     <Compile Include="Assets\Scripts\ShotCtrlr.cs" />
     <Compile Include="Assets\Scripts\TwrSpwnCtrlr.cs" />
-    <Compile Include="Assets\Scripts\MoCtrlr.cs" />
-    <Compile Include="Assets\Scripts\MoShellCtrlr.cs" />
+    <Compile Include="Assets\Scripts\boomCtrlr.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

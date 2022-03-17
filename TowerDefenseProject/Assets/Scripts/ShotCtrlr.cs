@@ -13,6 +13,9 @@ public class ShotCtrlr : BseTwr
                 Instantiate(blt, bltSpwnPos[i].transform.position, transform.rotation * Quaternion.Euler(0, 0, (i*5)-15f));
             }
         }
+
+        srce.Play();
+        Instantiate(flsh, bltSpwnPos[0].transform.position, transform.rotation);
         cldwn = StSpd;
         base.Shoot();
     }

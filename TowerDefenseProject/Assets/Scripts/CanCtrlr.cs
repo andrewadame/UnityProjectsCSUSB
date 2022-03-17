@@ -6,7 +6,9 @@ public class CanCtrlr : BseTwr
 {
     public override void Shoot()
     {
-        Instantiate(blt, transform.position, transform.rotation);
+        Instantiate(blt, bltSpwnPos[0].transform.position, transform.rotation);
+        srce.Play();
+        Instantiate(flsh, bltSpwnPos[0].transform.position, transform.rotation);
         cldwn = StSpd;
         base.Shoot();
     }

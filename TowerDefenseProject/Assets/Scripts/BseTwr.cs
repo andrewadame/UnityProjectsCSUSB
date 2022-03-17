@@ -16,6 +16,17 @@ public class BseTwr : MonoBehaviour
 
     public GameObject[] bltSpwnPos;
 
+    public float cost;
+
+    public GameObject flsh;
+
+    protected AudioSource srce;
+
+    private void Awake()
+    {
+        srce = GetComponent<AudioSource>();
+    }
+
     private void OnEnable()
     {
         GetComponent<CircleCollider2D>().radius = atkRng;

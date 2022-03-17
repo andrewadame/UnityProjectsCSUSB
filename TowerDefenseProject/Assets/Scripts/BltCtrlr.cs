@@ -42,6 +42,9 @@ public class BltCtrlr : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.GetComponent<EnCtrlr>().TkeDmg(dmg);
+
+            //destroy bullet on hit
+            Destroy(gameObject);
         }
     }
 }
