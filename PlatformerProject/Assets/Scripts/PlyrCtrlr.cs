@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlyrCtrlr : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlyrCtrlr : MonoBehaviour
 
     public LayerMask wlLyr;
     public float ryLngth;
+    [SerializeField]
     bool cnJmp;
     public float jmpHt;
 
@@ -21,12 +23,25 @@ public class PlyrCtrlr : MonoBehaviour
     public float tmeBtwnHrt;
     float iframe;
 
+    Animator anim;
+
+    SpriteRenderer rend;
+
+    [SerializeField]
+    int coins;
+
+    public Image hlthImg;
+    public Text coinsTxt;
+
     void Awake()
     {
         plyrRgdBdy = GetComponent<Rigidbody2D>();
         hlth = mxHlth;
         hurt = false;
         iframe = tmeBtwnHrt;
+        anim = GetComponent<Animator>();
+        rend = GetComponent<SpriteRenderer>();
+        coins = 0;
     }
 
     // Update is called once per frame
@@ -37,6 +52,8 @@ public class PlyrCtrlr : MonoBehaviour
         {
             plyrRgdBdy.AddForce(Vector2.right * inputX * spd * Time.deltaTime);
         }
+
+        rend.flipX = (inputX < 0);
 
         //Jump Condition
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, ryLngth, wlLyr);
@@ -61,8 +78,17 @@ public class PlyrCtrlr : MonoBehaviour
         //Damage Test
         if(!hurt && Input.GetKeyDown(KeyCode.LeftControl))
         {
-            dmg(2);
+            dmg(1);
         }
+
+        //UI
+        hlthImg.fillAmount = Mathf.Lerp(hlthImg.fillAmount, hlth / mxHlth, Time.deltaTime * 10f);
+        coinsTxt.text = coins.ToString();
+
+        //Animation
+        anim.SetBool("Mvng", inputX != 0);
+        anim.SetBool("CnJmp", cnJmp);
+        anim.SetBool("Hrt", hurt);
     }
 
     void dmg(float amt)
@@ -83,5 +109,20 @@ public class PlyrCtrlr : MonoBehaviour
     void ResetHurt()
     {
         hurt = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            coins++;
+
+            //Delete
+            Destroy(collision.gameObject);
+
+            /*Disable
+            collision.gameObject.SetActive(false);
+            */
+        }
     }
 }

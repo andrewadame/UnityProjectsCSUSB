@@ -53,7 +53,10 @@
     <UnityVersion>2020.3.26f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CamCtrlr.cs" />
     <Compile Include="Assets\Scripts\PlyrCtrlr.cs" />
+    <Compile Include="Assets\Scripts\EnCtrlr.cs" />
+    <Compile Include="Assets\Scripts\MelEnCtrlr.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
