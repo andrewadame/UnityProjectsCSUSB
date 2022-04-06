@@ -10,18 +10,27 @@ public class MelEnCtrlr : EnCtrlr
         dist = Vector2.Distance(transform.position, plyr.transform.position);
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * dir, ryLgth, wlLyr);
+        RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.right * dir - Vector2.up, ryLgth, wlLyr);
+
         //If enemy hits wall, turn around
-        if(hit.collider != null)
+        if (hit.collider != null)
         {
             dir *= -1;
         }
 
-        Debug.DrawRay(transform.position, Vector2.right * dir * ryLgth * wlLyr);
+        //If enemy hits ledge, turn around
+        if (hitDown.collider == null)
+        {
+            //Debug.Log("Why tho");
+            dir *= -1;
+        }
 
-        if(dist <= chsRng)
+        if (dist <= chsRng)
         {
             crntSte = enStes.chase;
         }
+
+        Debug.DrawRay(transform.position, Vector2.right * dir * ryLgth * wlLyr);
 
         enRgdBdy.AddForce(Vector2.right * dir * spd * Time.deltaTime);
     }
@@ -59,7 +68,22 @@ public class MelEnCtrlr : EnCtrlr
 
     public override void Attack()
     {
-        Debug.Log("Attack!");
+        if(atkCldwn <= 0)
+        {
+            //Debug.Log("Attack!");
+            anim.SetBool("Attack", true);
+            Invoke("ResetAttack", 0.1f);
+            atkCldwn = tmeBtwnAtk;
+        }
+        else
+        {
+            crntSte = enStes.chase;
+        }
+    }
+
+    private void ResetAttack()
+    {
+        anim.SetBool("Attack", false);
     }
 
     public override void Damage(float amnt)

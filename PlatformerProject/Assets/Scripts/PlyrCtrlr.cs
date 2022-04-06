@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlyrCtrlr : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class PlyrCtrlr : MonoBehaviour
     public Image hlthImg;
     public Text coinsTxt;
 
+    public GameObject GmeOvrUI;
+    bool gmeOvr;
+
     void Awake()
     {
         plyrRgdBdy = GetComponent<Rigidbody2D>();
@@ -42,6 +46,7 @@ public class PlyrCtrlr : MonoBehaviour
         anim = GetComponent<Animator>();
         rend = GetComponent<SpriteRenderer>();
         coins = 0;
+        gmeOvr = false;
     }
 
     // Update is called once per frame
@@ -89,21 +94,38 @@ public class PlyrCtrlr : MonoBehaviour
         anim.SetBool("Mvng", inputX != 0);
         anim.SetBool("CnJmp", cnJmp);
         anim.SetBool("Hrt", hurt);
+
+        if(gmeOvr && Input.anyKeyDown)
+        {
+            SceneManager.LoadScene("SampleScene");
+            Time.timeScale = 1f;
+        }    
     }
 
-    void dmg(float amt)
+    public void dmg(float amt)
     {
-        hlth -= amt;
-        hurt = true;
-        Invoke("ResetHurt", 0.2f);
-
-        //Game Over
-        if(hlth <= 0)
+        if (iframe < 0)
         {
+            hlth -= amt;
+            hurt = true;
+            Invoke("ResetHurt", 0.2f);
 
+            //Game Over
+            if (hlth <= 0)
+            {
+                GameOver();
+
+            }
+
+            iframe = tmeBtwnHrt;
         }
+    }
 
-        iframe = tmeBtwnHrt;
+    private void GameOver()
+    {
+        gmeOvr = true;
+        GmeOvrUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     void ResetHurt()
@@ -123,6 +145,22 @@ public class PlyrCtrlr : MonoBehaviour
             /*Disable
             collision.gameObject.SetActive(false);
             */
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //If player lands on top of enemy, do damage to enemy
+        if(collision.gameObject.CompareTag("Enemy") && plyrRgdBdy.velocity.y < 0)
+        {
+            float bndsY = collision.gameObject.GetComponent<SpriteRenderer>().bounds.size.y/2;
+
+            //If player on enemy side, add force
+            if(transform.position.y > collision.gameObject.transform.position.y + bndsY)
+            {
+                plyrRgdBdy.AddForceAtPosition(-plyrRgdBdy.velocity.normalized * jmpHt / 2f, plyrRgdBdy.position);
+                collision.gameObject.GetComponent<EnCtrlr>().Damage(5f);
+            }
         }
     }
 }

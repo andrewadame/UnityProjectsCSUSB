@@ -27,11 +27,19 @@ public class EnCtrlr : MonoBehaviour
     protected float dist;
     protected PlyrCtrlr plyr;
 
+    public float tmeBtwnAtk;
+    protected float atkCldwn;
+
+    protected Animator anim;
+
     private void OnEnable()
     {
         hlth = mxHlth;
         //if Random.value is >= 0.5, then (?) right. Otherwise, left.
         dir = (Random.value >= 0.5f) ? 1 : -1;
+
+        //if attack, wait X seconds till next attack
+        atkCldwn = tmeBtwnAtk;
     }
 
     private void Awake()
@@ -39,32 +47,15 @@ public class EnCtrlr : MonoBehaviour
         enRgdBdy = GetComponent<Rigidbody2D>();
         rend = GetComponent<SpriteRenderer>();
         plyr = FindObjectOfType<PlyrCtrlr>();
+
+        anim = GetComponent<Animator>();
     }
 
-    public virtual void Move()
-    {
-
-    }
-
-    public virtual void Chase()
-    {
-
-    }
-
-    public virtual void Attack()
-    {
-
-    }
-
-    public virtual void Damage(float amnt)
-    {
-
-    }
-
-    public virtual void Die()
-    {
-
-    }
+    public virtual void Move(){}
+    public virtual void Chase(){}
+    public virtual void Attack(){}
+    public virtual void Damage(float amnt){}
+    public virtual void Die(){}
 
     // Update is called once per frame
     void Update()
@@ -85,6 +76,11 @@ public class EnCtrlr : MonoBehaviour
             case enStes.attack:
                     Attack();
             break;
+        }
+
+        if(atkCldwn > 0)
+        {
+            atkCldwn -= Time.deltaTime;
         }
 
         hlthImg.fillAmount = Mathf.Lerp(hlthImg.fillAmount, hlth / mxHlth, Time.deltaTime * 10f);

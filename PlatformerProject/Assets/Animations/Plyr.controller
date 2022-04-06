@@ -91,13 +91,13 @@ AnimatorStateMachine:
     m_Position: {x: 160, y: -100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8121716931966795226}
-    m_Position: {x: 180, y: 390, z: 0}
+    m_Position: {x: 170, y: 390, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2780539102651015641}
     m_Position: {x: 160, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7833137526463427347}
-    m_Position: {x: 180, y: 220, z: 0}
+    m_Position: {x: 170, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8975757338060359054}
     m_Position: {x: 500, y: -100, z: 0}
@@ -304,7 +304,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PlyrDmg
-  m_Speed: 1.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4243815678506119145}
@@ -364,19 +364,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Hrt
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: CnJmp
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
