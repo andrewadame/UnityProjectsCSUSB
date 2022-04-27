@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarCtrlr : MonoBehaviour
 {
@@ -30,8 +31,10 @@ public class CarCtrlr : MonoBehaviour
     public float slkDrg;
     float crntDrg;
     public float drgLrp;
-
     public bool htChckPnts = false;
+
+    //Lap Txt
+    public Text lpTxt;
 
     private void OnEnable()
     {
@@ -67,6 +70,10 @@ public class CarCtrlr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //UI
+        lpTxt.text = "Lap: " + crntLp.ToString() + "/" + cont.laps;
+
+        //Controls
         if (cont.strtd && !slicked)
         {
             input = new Vector2(Input.GetAxis(inputXNme), Input.GetAxis(inputYNme));
@@ -110,6 +117,7 @@ public class CarCtrlr : MonoBehaviour
         if (collision.gameObject.CompareTag("Goal") && htChckPnts)
         {
             crntLp++;
+
             if (crntLp >= cont.laps)
             {
                 cont.EndGame(num);
