@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public float intrctDist;
+    [SerializeField]
     float dist;
 
     public GameObject shpPrnt;
@@ -36,6 +37,15 @@ public class Shop : MonoBehaviour
     
     public void PopShop()
     {
+        ShopItem shpItm;
+        for (int i = 0; i < 3; i++)
+        {
+            //shpItm = Instantiate(cont.shpItms[i]);
+            shpItm = Instantiate(cont.GtRndItm(cont.shpItms));
+            shpItm.transform.SetParent(shpPrnt.transform);
+            shpItm.transform.localPosition = new Vector3((i * 0.5f) - 0.5f, 0, 0);
+
+        }
 
     }
 }

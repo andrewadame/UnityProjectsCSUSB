@@ -10,6 +10,8 @@ public class Item : MonoBehaviour
     public bool itmRot;
     public float amnt;  //position add amount to plyr hlth value, weapon decrease amnt of en hlh
 
+    public enum rairty {common, uncommon, rare, epic, legendary};
+    public rairty itmRarity;
     public Sprite itmSprte;
     protected Invtry inv;
 

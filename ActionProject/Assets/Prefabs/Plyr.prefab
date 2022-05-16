@@ -1,5 +1,75 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1429706841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1429706842}
+  - component: {fileID: 1429706843}
+  - component: {fileID: 8492825901682284127}
+  m_Layer: 6
+  m_Name: MeleCol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1429706842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429706841}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.347, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7690567424665057318}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1429706843
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429706841}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0027651787, y: -0.1412434}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7566881, y: 0.5878061}
+  m_EdgeRadius: 0
+--- !u!114 &8492825901682284127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429706841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675dcf06a7a8f7c4782440b43f96ff3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7690567424665057500
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,7 +86,7 @@ GameObject:
   - component: {fileID: 7690567424665057499}
   m_Layer: 0
   m_Name: Plyr
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,6 +103,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7690567426276109505}
+  - {fileID: 1429706842}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,9 +170,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384cfe0de59945c4ba77183916d17142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spd: 300
+  spd: 400
   mxHlth: 10
   hlth: 0
+  htlhUI: {fileID: 0}
+  mxMny: 20
+  mny: 0
+  mnyTxt: {fileID: 0}
+  attack: 5
+  level: 1
+  exp: 0
+  expToNxt: 0
+  expCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  expTxt: {fileID: 0}
+  ifrmeTme: 1
+  meleeCol: {fileID: 1429706841}
 --- !u!50 &7690567424665057497
 Rigidbody2D:
   serializedVersion: 4
@@ -136,7 +224,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.013457596, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -147,7 +235,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.46932948, y: 1}
   m_EdgeRadius: 0
 --- !u!95 &7690567424665057499
 Animator:
@@ -266,6 +354,7 @@ MonoBehaviour:
   items: []
   iSlot: 0
   nxtSlot: 0
+  rot: 0
   parentRend: {fileID: 7690567424665057319}
   item1: {fileID: 7071354859772420443, guid: ad4daed3071bae1449954747e9a7de0e, type: 3}
   item2: {fileID: 6470236823984950823, guid: 89dbcad4894ac344bb9cb35554e6f29b, type: 3}

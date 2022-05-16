@@ -10,7 +10,16 @@ public class RngWpn : Item
     {
         base.Use();
         Debug.Log("Use Ranged Weapon");
-        Instantiate(prjctle, transform.position, transform.rotation * Quaternion.Euler(0, 0, -90));
+
+        if (inv.transform.localScale.x == 1)
+        {
+            Instantiate(prjctle, transform.position, transform.rotation * Quaternion.Euler(0, 0, -90));
+        }
+
+        if (inv.transform.localScale.x == -1)
+        {
+            Instantiate(prjctle, transform.position, transform.rotation * Quaternion.Euler(0, 0, 90));
+        }
     }
 
     public override void Remove()

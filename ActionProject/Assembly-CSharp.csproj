@@ -57,6 +57,8 @@
     <Compile Include="Assets\Scripts\EnCtrlr.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />
     <Compile Include="Assets\Scripts\DialCtrlr.cs" />
+    <Compile Include="Assets\Scripts\GameCtrlr.cs" />
+    <Compile Include="Assets\Scripts\CamCtrlr.cs" />
     <Compile Include="Assets\Scripts\NPCCtrlr.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\Scripts\ShopItem.cs" />
@@ -64,9 +66,12 @@
     <Compile Include="Assets\Scripts\Items\RngWpn.cs" />
     <Compile Include="Assets\Scripts\Items\Invtry.cs" />
     <Compile Include="Assets\Scripts\Dial.cs" />
+    <Compile Include="Assets\Scripts\Items\Chest.cs" />
     <Compile Include="Assets\Scripts\Items\Csmble.cs" />
+    <Compile Include="Assets\Scripts\Items\ChestItem.cs" />
     <Compile Include="Assets\Scripts\Items\MelWpn.cs" />
-    <Compile Include="Assets\Scripts\GameCtrlr.cs" />
+    <Compile Include="Assets\Scripts\EnMelCol.cs" />
+    <Compile Include="Assets\Scripts\PlyrMelCol.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

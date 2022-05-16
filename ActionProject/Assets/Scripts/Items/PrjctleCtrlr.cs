@@ -6,11 +6,12 @@ public class PrjctleCtrlr : MonoBehaviour
 {
     public float spd;
     Rigidbody2D bltRgdBdy;
-    public float dmg;
+    RngWpn colt;
 
     private void Awake()
     {
         bltRgdBdy = GetComponent<Rigidbody2D>();
+        colt = FindObjectOfType<RngWpn>();
     }
 
     private void OnEnable()
@@ -41,7 +42,7 @@ public class PrjctleCtrlr : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Projecile Hit Enemy");
-            //collision.GetComponent<EnCtrlr>().TkeDmg(dmg);
+            collision.GetComponent<EnCtrlr>().Dmg(colt.amnt);
 
             //destroy bullet on hit
             Destroy(gameObject);

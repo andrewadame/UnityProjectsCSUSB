@@ -95,10 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af72cbac79a4c904a8d444f92ff31778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itmNme: Gun
+  itmNme: Colt
   itmDesc: Fires a projectile
-  itmCst: 10
+  itmCst: 15
   itmRot: 1
   amnt: 4
+  itmRarity: 3
   itmSprte: {fileID: 21300000, guid: 8042f796f2f870948b9d83fb70d79169, type: 3}
   prjctle: {fileID: 3049709044659404463, guid: d2d4c6ce87785194fb772f32c24e2625, type: 3}

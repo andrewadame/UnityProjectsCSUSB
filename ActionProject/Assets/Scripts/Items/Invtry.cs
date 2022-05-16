@@ -22,9 +22,6 @@ public class Invtry : MonoBehaviour
 
     public void Awake()
     {
-        AddItem(item1);
-        AddItem(item2);
-        AddItem(item3);
         nxtSlot = iSlot;
     }
 
@@ -34,6 +31,10 @@ public class Invtry : MonoBehaviour
         {
             Vector2 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            if(transform.localScale.x != 1)
+            {
+                angle += 180;
+            }
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.deltaTime * 10f);
         }
 
@@ -75,6 +76,7 @@ public class Invtry : MonoBehaviour
         nwItem.transform.SetParent(transform);
         nwItem.transform.localPosition = Vector3.zero;
         nwItem.transform.localRotation = Quaternion.identity;
+        nwItem.transform.localScale = new Vector3(1, 1, 1);
         items.Add(nwItem);
         nwItem.gameObject.SetActive(false);
 

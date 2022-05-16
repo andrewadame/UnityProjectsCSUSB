@@ -5,9 +5,8 @@ using UnityEngine;
 public class MelWpn :Item
 {
     Animator anim;
-    public LayerMask enLyr;
-    public float rayLngth;
-
+    //public LayerMask enLyr;
+    //public float rayLngth;
 
     public override void Use()
     {
@@ -15,14 +14,14 @@ public class MelWpn :Item
         Debug.Log("Use Melee Weapon");
         FindObjectOfType<Animator>().SetTrigger("Strike");
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, rayLngth, enLyr);
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, rayLngth, enLyr);
 
-        if(hit.collider != null && hit.collider.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Hit " + hit.collider.name);
-        }
+        //if(hit.collider != null && hit.collider.gameObject.CompareTag("Enemy"))
+        //{
+        //    Debug.Log("Hit " + hit.collider.name);
+        //}
 
-        Debug.DrawRay(transform.position, Vector2.right * rayLngth);
+        //Debug.DrawRay(transform.position, Vector2.right * rayLngth);
 
     }
 
@@ -30,6 +29,15 @@ public class MelWpn :Item
     {
         base.Remove();
         Debug.Log("Remove Melee Weapon");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Melee Hit Enemy");
+            collision.GetComponent<EnCtrlr>().Dmg(amnt);
+        }
     }
 }
 

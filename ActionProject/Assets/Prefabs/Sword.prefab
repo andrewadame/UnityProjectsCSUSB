@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5451747855071861876}
   - component: {fileID: 6470236823984950823}
   - component: {fileID: 6607549152765766680}
+  - component: {fileID: 5566989135569131387}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -98,14 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itmNme: Sword
   itmDesc: Damages enemy on contact
-  itmCst: 5
+  itmCst: 10
   itmRot: 0
   amnt: 2
+  itmRarity: 1
   itmSprte: {fileID: 21300000, guid: df91d3cdc9235c240895eebe6e12f5a8, type: 3}
-  enLyr:
-    serializedVersion: 2
-    m_Bits: 0
-  rayLngth: 1
 --- !u!95 &6607549152765766680
 Animator:
   serializedVersion: 3
@@ -125,3 +123,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &5566989135569131387
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813852092243514798}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.18955687, y: -0.1883096}
+  - {x: -0.18541566, y: -0.061264463}
+  - {x: 0.31120095, y: 0.43670663}
+  - {x: 0.43443516, y: 0.4365713}
+  - {x: 0.43635252, y: 0.3153374}
+  - {x: -0.06199421, y: -0.18937673}
+  - {x: -0.18654846, y: -0.18996195}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
