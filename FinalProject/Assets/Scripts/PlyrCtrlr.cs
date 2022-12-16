@@ -8,6 +8,8 @@ public class PlyrCtrlr : MonoBehaviour
     Rigidbody2D plyrRgdBdy;
     Vector2 input;
     public float spd;
+    public float dgeSpd;
+    Vector2 dgeVec; //Dodge direction    
 
     Animator anim;
     SpriteRenderer rend;
@@ -17,23 +19,25 @@ public class PlyrCtrlr : MonoBehaviour
 
     public float mxHlth;
     public float hlth;
-    //public Image htlhUI;
+    public Image htlhUI;
 
     public int mxMny;
     public int mny;
-    //public Text mnyTxt;
+    public Text mnyTxt;
 
     public float attack;
     public int level = 1;
     public float exp;
     public float expToNxt;
     public AnimationCurve expCurve = new AnimationCurve();
-    //public Text expTxt;
+    public Text expTxt;
 
     public float ifrmeTme = 0.6f;
     float iframe;
+    public float dgeTme = 0.8f;
+    float dge;
 
-    //public GameObject meleeCol;
+    public GameObject meleeCol;
 
     private void Awake()
     {
@@ -62,6 +66,10 @@ public class PlyrCtrlr : MonoBehaviour
         {
             iframe -= Time.deltaTime;
         }
+        if(dge > 0)
+        {
+            dge -= Time.deltaTime;
+        }
 
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
@@ -73,37 +81,55 @@ public class PlyrCtrlr : MonoBehaviour
         if (input.y < 0)
         {
             lkDir = 0;
-            //meleeCol.transform.localPosition = new Vector3(0, -0.347f, 0);
-            //meleeCol.transform.localScale = new Vector3(1, 1, 1);
+
+            //Attack Down
+            meleeCol.transform.localPosition = new Vector3(0, -0.16f, 0);
+            meleeCol.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (input.x > 0)
         {
             lkDir = 1;
+
+            //Attack Right
             rend.flipX = false;
-            //meleeCol.transform.localPosition = new Vector3(0.3f, 0.2f, 0);
-            //meleeCol.transform.localScale = new Vector3(1, 1, 1);
+            meleeCol.transform.localPosition = new Vector3(0.111f, -0.003f, 0);
+            meleeCol.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (input.y > 0)
         {
             lkDir = 2;
-            //meleeCol.transform.localPosition = new Vector3(0, 0.347f, 0);
-            //meleeCol.transform.localScale = new Vector3(1, 1, 1);
+
+            //Attack Up
+            meleeCol.transform.localPosition = new Vector3(0, 0.16f, 0);
+            meleeCol.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (input.x < 0)
         {
             lkDir = 1;
+
+            //Attack Left
             rend.flipX = true;
-            //meleeCol.transform.localPosition = new Vector3(-0.3f, 0.2f, 0);
-            //meleeCol.transform.localScale = new Vector3(1, 1, 1);
+            meleeCol.transform.localPosition = new Vector3(-0.111f, -0.003f, 0);
+            meleeCol.transform.localScale = new Vector3(1, 1, 1);
         }
         
 
         anim.SetInteger("dir", lkDir);
         anim.SetBool("mov", mvng);
 
+
+        //Dodge
+        ///////////
+        if (Input.GetKeyDown(KeyCode.F) && input != Vector2.zero)
+        {
+            Dodge();
+        }
+        ///////////
+
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //SwgAtk();
+            SwgAtk();
             Debug.Log("Attack!");
         }
 
@@ -113,17 +139,15 @@ public class PlyrCtrlr : MonoBehaviour
             AddExp(20);
         }
 
-        //htlhUI.fillAmount = hlth / mxHlth;
-        //mnyTxt.text = "Coins: " + mny.ToString();
-        //expTxt.text = "Level " + level.ToString() + " - Exp: " + exp.ToString() + "/" + expToNxt.ToString();
+        htlhUI.fillAmount = hlth / mxHlth;
+        mnyTxt.text = "Coins: " + mny.ToString();
+        expTxt.text = "Level " + level.ToString() + " - Exp: " + exp.ToString() + "/" + expToNxt.ToString();
 
     }
     public void SwgAtk()
     {
         anim.SetBool("atk", true);
         Invoke("RstAtk", 0.1f);
-
-
     }
 
     void RstAtk()
@@ -137,6 +161,20 @@ public class PlyrCtrlr : MonoBehaviour
         if (hlth > mxHlth)
         {
             hlth = mxHlth;
+        }
+    }
+
+    public void Dodge()
+    {
+        if (iframe <= 0 && dge <= 0)
+        {
+            dgeVec = input.normalized;
+            iframe = ifrmeTme;
+            dge = dgeTme;
+
+            //Dodge!
+            plyrRgdBdy.velocity = dgeVec.normalized * dgeSpd;
+            Debug.Log("Dodge!");
         }
     }
 
@@ -162,7 +200,10 @@ public class PlyrCtrlr : MonoBehaviour
     public void Die()
     {
         gameObject.SetActive(false);
+        FindObjectOfType<GmeCtrlr>().gmeOvr = true;
+        FindObjectOfType<GmeCtrlr>().gameOverUI.SetActive(true);
         Time.timeScale = 0;
+
     }
 
     public void AddMny(int amnt)
@@ -173,7 +214,7 @@ public class PlyrCtrlr : MonoBehaviour
     public float CalcExp(int level)
     {
         float expNded;
-        expNded = level * 100f;
+        expNded = level * 50f;
         return expNded;
     }
 
